@@ -15,17 +15,17 @@
   </div>
 
   <!-- Salmon overlay with less opacity -->
-  <div class="absolute inset-0 bg-red-600/70"></div>
+  <div class="absolute inset-0 bg-red-600/60"></div>
   <!-- Main content container -->
   <main class="relative flex flex-col md:flex-row items-center justify-center flex-1 
               max-w-6xl mx-auto gap-y-12 md:gap-y-0 md:gap-x-12 px-6">
 
     <!-- Left Section -->
     <section class="w-full md:w-5/12 flex flex-col justify-center text-white text-center md:text-left mt-12 md:mt-0">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 mt-4">
+      <h1 class="text-white text-4xl md:text-6xl font-extrabold mb-6 mt-4">
         Learn to code by watching others
       </h1>
-      <p class="text-base md:text-lg mb-6">
+      <p class="text-white text-base md:text-lg mb-6">
         See how experienced developers solve problems in real-time.
         Watching scripted tutorials is great, but understanding how developers think is invaluable.
       </p>
@@ -35,33 +35,33 @@
     <section class="w-full md:w-5/12 flex flex-col justify-center items-center relative">
       <!-- Trial button -->
       <button type="button"
-        class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-md mb-6 text-center">
+        class="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-md mb-6 text-center">
         <span class="font-bold">Try it free 7 days </span>
         <span class="font-normal block md:inline mt-1"> then $20/mo. thereafter</span>
+      </button>
+
+      <!-- Form -->
+      <form class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md flex flex-col gap-4">
+        <input type="text" placeholder="First Name"
+          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        <input type="text" placeholder="Last Name"
+          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        <input type="email" placeholder="Email Address"
+          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        <input type="password" placeholder="Password"
+          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+
+        <button type="submit"
+          class="bg-green-400 hover:bg-green-500 text-white px-6 py-3 rounded-lg font-medium transition shadow-md mt-4 w-full">
+          Claim your free trial
         </button>
 
-        <!-- Form -->
-        <form class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md flex flex-col gap-4">
-          <input type="text" placeholder="First Name"
-            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
-          <input type="text" placeholder="Last Name"
-            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
-          <input type="email" placeholder="Email Address"
-            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
-          <input type="password" placeholder="Password"
-            class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600">
-
-          <button type="submit"
-            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-md mt-4 w-full">
-            Claim your free trial
-          </button>
-
-          <p class="text-sm md:text-base mt-2 text-gray-500 text-center md:text-left md:max-w-full">
-            By clicking the button, you are agreeing to our
-            <!-- <br class="block md:hidden"> -->
-            <span class="text-red-600 font-medium">Terms and Services</span>
-          </p>
-        </form>
+        <p class="text-sm md:text-base mt-2 text-gray-500 text-center md:text-left md:max-w-full">
+          By clicking the button, you are agreeing to our
+          <!-- <br class="block md:hidden"> -->
+          <span class="text-red-600 font-medium">Terms and Services</span>
+        </p>
+      </form>
     </section>
 
   </main>
