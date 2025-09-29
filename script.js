@@ -1,0 +1,62 @@
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validateInputs();
+});
+
+function validateInputs() {
+    const inputs = form.querySelectorAll('input');
+
+    inputs.forEach(input => {
+        const value = input.value.trim();
+
+        if (value === '') {
+            showError(input, `${input.placeholder} cannot be empty`);
+        } else if (input.type === 'email' && !isValidEmail(value)) {
+            showError(input, 'Looks like this is not an email', true);
+        } else {
+            showSuccess(input);
+        }
+    });
+}
+
+function showError(input, message, isEmail = false) {
+    // remove old error if exists
+    let existingError = input.parentNode.querySelector('.error-message');
+    if (existingError) existingError.remove();
+
+    // style the input
+    input.classList.add('border-red-500');
+    input.classList.remove('border-gray-900');
+
+    // add error icon inside input
+    input.style.backgroundImage = "url('./images/icon-error.svg')";
+    input.style.backgroundRepeat = "no-repeat";
+    input.style.backgroundPosition = "right 1rem center";
+
+    // create error text
+    const error = document.createElement('p');
+    error.className = 'error-message text-red-500 text-sm mt-1 text-right italic';
+    error.innerText = message;
+
+    // make sure error displays under the input
+    input.insertAdjacentElement('afterend', error);
+}
+
+function showSuccess(input) {
+    let existingError = input.parentNode.querySelector('.error-message');
+    if (existingError) existingError.remove();
+
+    input.classList.remove('border-red-500');
+    input.classList.add('border-gray-900');
+
+    // remove icon + reset placeholder
+    input.classList.remove('placeholder-red-500');
+    input.classList.add('placeholder-gray-400');
+}
+
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+

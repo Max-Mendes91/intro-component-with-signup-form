@@ -31,6 +31,7 @@
 
     <!-- Right Section / Form -->
     <section class="w-full md:w-5/12 flex flex-col justify-center items-center relative">
+
       <!-- Trial button -->
       <button type="button"
         class="bg-purple-500 hover:bg-purple-700 text-white px-6 py-3 rounded-lg shadow-md w-full max-w-md mb-6 text-center">
@@ -40,14 +41,27 @@
 
 
       <form class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md flex flex-col gap-4">
-        <input type="text" placeholder="First Name"
-          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
-        <input type="text" placeholder="Last Name"
-          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
-        <input type="email" placeholder="Email Address"
-          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
-        <input type="password" placeholder="Password"
-          class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+
+        <div class="relative flex flex-col">
+          <input type="text" placeholder="First Name"
+            class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        </div>
+
+        <div class="relative flex flex-col">
+          <input type="text" placeholder="Last Name"
+            class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        </div>
+
+        <div class="relative flex flex-col">
+          <input type="email" placeholder="Email Address"
+            class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200 placeholder-gray-400">
+        </div>
+
+        <div class="relative flex flex-col">
+          <input type="password" placeholder="Password"
+            class="border border-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-200">
+        </div>
+
 
         <button type="submit"
           class="bg-green-400 hover:bg-green-500 text-white px-6 py-3 rounded-lg font-medium transition shadow-md mt-4 w-full">
@@ -70,7 +84,7 @@
       Coded by <a href="#" class="underline">Max Mendes</a>.
     </p>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
