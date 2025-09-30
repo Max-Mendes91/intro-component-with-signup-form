@@ -35,6 +35,15 @@ function showError(input, message, isEmail = false) {
     input.style.backgroundRepeat = "no-repeat";
     input.style.backgroundPosition = "right 1rem center";
 
+    //email place holder error
+    if (!isEmail && input.type === 'email') {
+        input.value = ''; // clear wrong input
+        input.placeholder = "email@example/com";
+        input.classList.remove('placeholder-gray-400');
+        input.classList.add('placeholder-red-500');
+    }
+
+
     // create error text
     const error = document.createElement('p');
     error.className = 'error-message text-red-500 text-sm mt-1 text-right italic';
