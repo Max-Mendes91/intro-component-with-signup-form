@@ -57,12 +57,18 @@ function showSuccess(input) {
     let existingError = input.parentNode.querySelector('.error-message');
     if (existingError) existingError.remove();
 
+    //remove border style 
     input.classList.remove('border-red-500');
     input.classList.add('border-gray-900');
 
     // remove icon + reset placeholder
     input.classList.remove('placeholder-red-500');
     input.classList.add('placeholder-gray-400');
+
+    //remove the icon
+    input.style.backgroundImage = "";
+    input.style.backgroundRepeat = "";
+    input.style.backgroundPosition = "";
 }
 
 function isValidEmail(email) {
