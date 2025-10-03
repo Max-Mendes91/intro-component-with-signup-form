@@ -2,23 +2,28 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateInputs();
+    const allValide = validateInputs();
+    if (allValide) resetForm();
 });
 
 function validateInputs() {
     const inputs = form.querySelectorAll('input');
+    let isFormValid = true;
 
     inputs.forEach(input => {
         const value = input.value.trim();
 
         if (value === '') {
             showError(input, `${input.placeholder} cannot be empty`);
+            isFormValid = false;
         } else if (input.type === 'email' && !isValidEmail(value)) {
             showError(input, 'Looks like this is not an email', true);
+            isFormValid = false;
         } else {
             showSuccess(input);
         }
     });
+    return isFormValid;
 }
 
 function showError(input, message, isEmail = false) {
@@ -75,3 +80,20 @@ function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
 
+
+// reset function
+function resetForm() {
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.value = '';
+        input.classList.remove('border-red-500', 'placeholder-red-500');
+        input.classList.add('border-gray-900', 'placeholder-gray-400');
+
+        input.style.backgroundImage = "";
+        input.style.backgroundRepeat = "";
+        input.style.backgroundPosition = "";
+
+        let existingError = input.parentNode.querySelector('.error-message');
+        if (existingError) existingError.remove();
+    });
+}
